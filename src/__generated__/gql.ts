@@ -14,7 +14,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 const documents = {
-    "query GetPokemonStockPairs {\n  pokemonStockPair {\n    id\n    pokemon {\n      name\n      pokedexNumber\n      spriteUrl\n      type1 {\n        spriteUrl\n        type\n      }\n      type2 {\n        spriteUrl\n        type\n      }\n    }\n    stock {\n      name\n      price\n      symbol\n    }\n  }\n}": types.GetPokemonStockPairsDocument,
+    "query GetAllPokemonStockPairs {\n  pokemonStockPair {\n    id\n    pokemon {\n      name\n      spriteUrl\n    }\n    stock {\n      symbol\n    }\n  }\n}": types.GetAllPokemonStockPairsDocument,
 };
 
 /**
@@ -34,7 +34,7 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "query GetPokemonStockPairs {\n  pokemonStockPair {\n    id\n    pokemon {\n      name\n      pokedexNumber\n      spriteUrl\n      type1 {\n        spriteUrl\n        type\n      }\n      type2 {\n        spriteUrl\n        type\n      }\n    }\n    stock {\n      name\n      price\n      symbol\n    }\n  }\n}"): (typeof documents)["query GetPokemonStockPairs {\n  pokemonStockPair {\n    id\n    pokemon {\n      name\n      pokedexNumber\n      spriteUrl\n      type1 {\n        spriteUrl\n        type\n      }\n      type2 {\n        spriteUrl\n        type\n      }\n    }\n    stock {\n      name\n      price\n      symbol\n    }\n  }\n}"];
+export function gql(source: "query GetAllPokemonStockPairs {\n  pokemonStockPair {\n    id\n    pokemon {\n      name\n      spriteUrl\n    }\n    stock {\n      symbol\n    }\n  }\n}"): (typeof documents)["query GetAllPokemonStockPairs {\n  pokemonStockPair {\n    id\n    pokemon {\n      name\n      spriteUrl\n    }\n    stock {\n      symbol\n    }\n  }\n}"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

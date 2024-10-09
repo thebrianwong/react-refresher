@@ -1,0 +1,12 @@
+query GetAllPokemonStockPairs {
+  pokemonStockPair {
+    id
+    pokemon {
+      name
+      spriteUrl
+    }
+    stock {
+      symbol
+    }
+  }
+}

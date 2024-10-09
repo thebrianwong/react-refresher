@@ -2,10 +2,13 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { useQuery } from "@apollo/client";
+import { GetAllPokemonStockPairsDocument } from "./__generated__/graphql";
 
 function App() {
   const [count, setCount] = useState(0);
-  console.log(import.meta.env.test);
+  const { data } = useQuery(GetAllPokemonStockPairsDocument);
+  console.log(data);
   return (
     <>
       <div>
