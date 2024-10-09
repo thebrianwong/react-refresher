@@ -2,7 +2,7 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Stack,
+  Grid2 as Grid,
   SxProps,
   Typography,
 } from "@mui/material";
@@ -31,7 +31,7 @@ export const PSPPreviewCard = ({
   return (
     <>
       <Card>
-        <Stack direction="row" justifyContent="space-around">
+        <Grid container direction="row" justifyContent="space-around">
           <CardContent sx={contentStyling}>
             <CardMedia
               component="img"
@@ -64,7 +64,7 @@ export const PSPPreviewCard = ({
               {stockSymbol}
             </Typography>
           </CardContent>
-        </Stack>
+        </Grid>
       </Card>
     </>
   );

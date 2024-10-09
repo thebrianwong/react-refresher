@@ -32,7 +32,7 @@ export const MainPage = () => {
         container
         columnGap={2}
         rowGap={4}
-        paddingX={12}
+        paddingX={8}
         justifyContent="center"
       >
         {!loading && data ? (
