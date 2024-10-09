@@ -26,6 +26,7 @@ export const PSPPreviewCard = ({
 
   const mediaStyling: SxProps = {
     width: 125,
+    height: 125,
   };
 
   return (
