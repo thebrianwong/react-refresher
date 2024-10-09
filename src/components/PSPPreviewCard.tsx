@@ -37,6 +37,7 @@ export const PSPPreviewCard = ({
               component="img"
               sx={mediaStyling}
               src={pokemonSpriteUrl}
+              loading="lazy"
             />
             <Typography variant="h6" component="span" fontWeight={600}>
               {pokemonName}
@@ -47,6 +48,7 @@ export const PSPPreviewCard = ({
               component="img"
               sx={mediaStyling}
               src={`https://logo.synthfinance.com/ticker/${stockSymbol}`}
+              loading="lazy"
             />
             <Typography variant="h6" component="span" fontWeight={600}>
               {stockSymbol}
