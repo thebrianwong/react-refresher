@@ -21,7 +21,6 @@ export const PSPPreviewCard = ({
   const contentStyling: SxProps = {
     display: "flex",
     flexDirection: "column",
-    gap: 2,
   };
 
   return (
@@ -40,6 +39,7 @@ export const PSPPreviewCard = ({
               component="span"
               fontWeight={600}
               textAlign="center"
+              marginTop={2}
             >
               {pokemonName}
             </Typography>
@@ -56,6 +56,7 @@ export const PSPPreviewCard = ({
               component="span"
               fontWeight={600}
               textAlign="center"
+              marginTop={2}
             >
               {stockSymbol}
             </Typography>
