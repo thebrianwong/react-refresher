@@ -10,3 +10,26 @@ query GetAllPokemonStockPairs {
     }
   }
 }
+
+query GetPokemonStockPair($id: ID) {
+  pokemonStockPair(id: $id) {
+    pokemon {
+      name
+      pokedexNumber
+      spriteUrl
+      type1 {
+        spriteUrl
+        type
+      }
+      type2 {
+        spriteUrl
+        type
+      }
+    }
+    stock {
+      name
+      price
+      symbol
+    }
+  }
+}
