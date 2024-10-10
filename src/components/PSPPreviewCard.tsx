@@ -1,11 +1,11 @@
 import {
   Card,
   CardContent,
-  CardMedia,
   Grid2 as Grid,
   SxProps,
   Typography,
 } from "@mui/material";
+import { Image } from "./Image";
 
 interface PSPPreviewCardProps {
   pokemonName: string;
@@ -24,7 +24,7 @@ export const PSPPreviewCard = ({
     gap: 2,
   };
 
-  const mediaStyling: SxProps = {
+  const imageStyling: SxProps = {
     width: 125,
     height: 125,
   };
@@ -34,11 +34,10 @@ export const PSPPreviewCard = ({
       <Card>
         <Grid container direction="row" justifyContent="space-around">
           <CardContent sx={contentStyling}>
-            <CardMedia
-              component="img"
-              sx={mediaStyling}
+            <Image
+              styling={imageStyling}
               src={pokemonSpriteUrl}
-              loading="lazy"
+              alt={`Official artwork of ${pokemonName}`}
             />
             <Typography
               variant="h6"
@@ -50,11 +49,10 @@ export const PSPPreviewCard = ({
             </Typography>
           </CardContent>
           <CardContent sx={contentStyling}>
-            <CardMedia
-              component="img"
-              sx={mediaStyling}
+            <Image
+              styling={imageStyling}
               src={`https://logo.synthfinance.com/ticker/${stockSymbol}`}
-              loading="lazy"
+              alt={`${stockSymbol} company logo`}
             />
             <Typography
               variant="h6"
