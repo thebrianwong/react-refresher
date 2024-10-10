@@ -40,6 +40,7 @@ export const MainPage = () => {
             return (
               <Grid key={psp.id}>
                 <PSPPreviewCard
+                  pspId={psp.id}
                   pokemonName={psp.pokemon.name}
                   pokemonSpriteUrl={psp.pokemon.spriteUrl}
                   stockSymbol={psp.stock.symbol}

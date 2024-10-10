@@ -11,17 +11,19 @@ import { useContext } from "react";
 import { ModalContext } from "../context/ModalContext";
 
 interface PSPPreviewCardProps {
+  pspId: string;
   pokemonName: string;
   pokemonSpriteUrl: string;
   stockSymbol: string;
 }
 
 export const PSPPreviewCard = ({
+  pspId,
   pokemonName,
   pokemonSpriteUrl,
   stockSymbol,
 }: PSPPreviewCardProps) => {
-  const { toggleModal } = useContext(ModalContext);
+  const { openModal } = useContext(ModalContext);
 
   const contentStyling: SxProps = {
     display: "flex",
@@ -31,7 +33,7 @@ export const PSPPreviewCard = ({
   return (
     <>
       <Card>
-        <CardActionArea onClick={() => toggleModal()}>
+        <CardActionArea onClick={() => openModal(pspId)}>
           <Grid container direction="row" justifyContent="space-around">
             <CardContent sx={contentStyling}>
               <Image
