@@ -4,7 +4,7 @@ const config: CodegenConfig = {
   schema: `${process.env.VITE_BACKEND_URL}/graphql`,
   documents: "src/**/*.graphql",
   generates: {
-    "./src/__generated__/": {
+    "./src/codegen/": {
       preset: "client",
       plugins: [],
       presetConfig: {

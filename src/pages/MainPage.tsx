@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { GetAllPokemonStockPairsDocument } from "../__generated__/graphql";
+import { GetAllPokemonStockPairsDocument } from "../codegen/graphql";
 import { PSPPreviewCard } from "../components/PSPPreviewCard";
 import {
   CircularProgress,
