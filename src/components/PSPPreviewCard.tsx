@@ -7,6 +7,8 @@ import {
   Typography,
 } from "@mui/material";
 import { Image } from "./Image";
+import { useContext } from "react";
+import { ModalContext } from "../context/ModalContext";
 
 interface PSPPreviewCardProps {
   pokemonName: string;
@@ -19,6 +21,8 @@ export const PSPPreviewCard = ({
   pokemonSpriteUrl,
   stockSymbol,
 }: PSPPreviewCardProps) => {
+  const { toggleModal } = useContext(ModalContext);
+
   const contentStyling: SxProps = {
     display: "flex",
     flexDirection: "column",
@@ -27,7 +31,7 @@ export const PSPPreviewCard = ({
   return (
     <>
       <Card>
-        <CardActionArea>
+        <CardActionArea onClick={() => toggleModal()}>
           <Grid container direction="row" justifyContent="space-around">
             <CardContent sx={contentStyling}>
               <Image
