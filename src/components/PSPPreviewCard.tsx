@@ -24,18 +24,14 @@ export const PSPPreviewCard = ({
     gap: 2,
   };
 
-  const imageStyling: SxProps = {
-    width: 125,
-    height: 125,
-  };
-
   return (
     <>
       <Card>
         <Grid container direction="row" justifyContent="space-around">
           <CardContent sx={contentStyling}>
             <Image
-              styling={imageStyling}
+              height={125}
+              width={125}
               src={pokemonSpriteUrl}
               alt={`Official artwork of ${pokemonName}`}
             />
@@ -50,7 +46,8 @@ export const PSPPreviewCard = ({
           </CardContent>
           <CardContent sx={contentStyling}>
             <Image
-              styling={imageStyling}
+              height={125}
+              width={125}
               src={`https://logo.synthfinance.com/ticker/${stockSymbol}`}
               alt={`${stockSymbol} company logo`}
             />

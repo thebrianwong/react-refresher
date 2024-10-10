@@ -1,13 +1,40 @@
-import { Box, SxProps } from "@mui/material";
+import { Box, CircularProgress, Container } from "@mui/material";
+import { useState } from "react";
 
 interface ImageProps {
-  styling: SxProps;
+  height: number;
+  width: number;
   src: string;
   alt: string;
 }
 
-export const Image = ({ styling, src, alt }: ImageProps) => {
+export const Image = ({ height, width, src, alt }: ImageProps) => {
+  const [loading, setLoading] = useState(true);
+
   return (
-    <Box component="img" sx={styling} src={src} alt={alt} loading="lazy" />
+    <>
+      {loading && (
+        <Container
+          sx={{
+            height,
+            width,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <CircularProgress size={75} />
+        </Container>
+      )}
+      <Box
+        component="img"
+        height={loading ? 0 : height}
+        width={width}
+        src={src}
+        alt={alt}
+        loading="lazy"
+        onLoad={() => setLoading(false)}
+      />
+    </>
   );
 };
